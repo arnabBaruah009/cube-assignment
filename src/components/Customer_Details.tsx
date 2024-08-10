@@ -7,7 +7,7 @@ const Customer_Details = ({
   customer: CustomerType | undefined;
 }) => {
   return (
-    <section className="w-4/6 h-screen text-center p-32 pt-10 overflow-y-auto bg-slate-100">
+    <section className="w-full h-3/5 sm:w-4/6 grow sm:h-screen text-center p-16 md:p-20 xl:p-32 pt-10 overflow-y-auto bg-slate-100">
       <div className="mb-10">
         <h1 className="text-3xl font-medium my-4">{customer?.name}</h1>
         <p className="text-xl my-4 text-slate-600">
@@ -57,10 +57,10 @@ const ImageContainer = ({
   }, [customer]);
 
   return (
-    <div className="grid grid-cols-3 grid-rows-3 gap-10 justify-items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 justify-items-center">
       {data?.message?.map((url) => {
         return (
-          <div key={url} className="w-40 h-40">
+          <div key={url} className="w-48 h-48">
             <Image src={url} />
           </div>
         );

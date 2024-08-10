@@ -101,15 +101,15 @@ const Customer_List = ({
   }, []);
 
   return (
-    <aside className="w-2/6 h-screen overflow-y-auto no-scrollbar">
+    <aside className="w-full h-2/5 border-b-2 sm:w-2/6 grow sm:h-screen overflow-y-auto no-scrollbar">
       <ul>
         {customers.map((customer) => {
           return (
             <li
               key={customer.name}
               onClick={() => handleCustomerClick(customer)}
-              className={`w-full p-10 border-1 ${
-                activeID === customer.id ? "bg-blue-100" : ""
+              className={`w-full py-4 px-6 md:px-8 md:py-6 xl:px-12 border-1 ${
+                activeID === customer.id ? "bg-blue-100 border-r-4 border-r-slate-500" : ""
               } hover:bg-blue-100 cursor-pointer border-b-2`}
             >
               <Customer customer={customer} />
@@ -129,10 +129,10 @@ const Customer = ({ customer }: { customer: CustomerType }) => {
       <div>
         <div className="flex items-center mb-4">
           <img className="w-16 h-16 rounded-full mr-8" src={customer.image} />
-          <h1 className="text-2xl">{customer.name}</h1>
+          <h1 className="text-xl md:text-2xl">{customer.name}</h1>
         </div>
 
-        <p className="text-slate-500">
+        <p className="text-slate-500 text-xs md:text-sm xl:text-lg text-justify">
           {customer.about.length > 200
             ? customer.about.substring(0, 200) + "..."
             : customer.about}

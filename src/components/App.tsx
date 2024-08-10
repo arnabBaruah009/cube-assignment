@@ -6,7 +6,7 @@ import { CustomerType } from "../types";
 function App() {
   const [activeCustomer, setActiveCustomer] = useState<CustomerType>();
   return (
-    <div className="w-screen h-screen flex">
+    <div className="w-screen h-screen flex flex-col sm:flex-row">
       <CustomerList setActiveCustomer={setActiveCustomer} />
       {activeCustomer && <CustomerDetails customer={activeCustomer} />}
     </div>
