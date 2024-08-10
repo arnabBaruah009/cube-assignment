@@ -98,7 +98,7 @@ const Customer_List = ({
 
   useEffect(() => {
     setActiveCustomer(customers[0]);
-  }, []);
+  }, [customers, setActiveCustomer]);
 
   return (
     <aside className="w-full h-2/5 border-b-2 md:w-2/6 grow md:h-screen overflow-y-auto no-scrollbar">
