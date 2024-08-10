@@ -101,7 +101,7 @@ const Customer_List = ({
   }, []);
 
   return (
-    <div className="w-2/6 h-screen overflow-y-auto no-scrollbar">
+    <aside className="w-2/6 h-screen overflow-y-auto no-scrollbar">
       <ul>
         {customers.map((customer) => {
           return (
@@ -117,7 +117,7 @@ const Customer_List = ({
           );
         })}
       </ul>
-    </div>
+    </aside>
   );
 };
 

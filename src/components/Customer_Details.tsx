@@ -7,16 +7,18 @@ const Customer_Details = ({
   customer: CustomerType | undefined;
 }) => {
   return (
-    <div className="w-4/6 h-screen text-center p-32 pt-10 overflow-y-auto bg-slate-100">
+    <section className="w-4/6 h-screen text-center p-32 pt-10 overflow-y-auto bg-slate-100">
       <div className="mb-10">
         <h1 className="text-3xl font-medium my-4">{customer?.name}</h1>
-        <p className="text-xl my-4 text-slate-600">Address: {customer?.address}</p>
+        <p className="text-xl my-4 text-slate-600">
+          Address: {customer?.address}
+        </p>
         <p className="text-justify text-slate-500">{customer?.about}</p>
       </div>
       <div>
         <ImageContainer customer={customer} />
       </div>
-    </div>
+    </section>
   );
 };
 
