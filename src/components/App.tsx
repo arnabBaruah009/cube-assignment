@@ -1,18 +1,14 @@
 import { useState } from "react";
 import CustomerList from "./Customer_List";
-
-type Customer = {
-  id: number;
-  name: string;
-  address: string;
-  about: string;
-}
+import CustomerDetails from "./Customer_Details";
+import { CustomerType } from "../types";
 
 function App() {
-  const [activeCustomer, setActiveCustomer] = useState<Customer>()
+  const [activeCustomer, setActiveCustomer] = useState<CustomerType>();
   return (
     <div className="w-screen h-screen flex">
       <CustomerList setActiveCustomer={setActiveCustomer} />
+      {activeCustomer && <CustomerDetails customer={activeCustomer} />}
     </div>
   );
 }
