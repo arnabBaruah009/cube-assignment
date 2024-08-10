@@ -1,4 +1,4 @@
-import React, { ReactHTMLElement, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CustomerType } from "../types";
 
 const Customer_List = ({
