@@ -44,6 +44,7 @@ const ImageContainer = ({
     }
   };
 
+  // useEffect to change images every 10 seconds
   useEffect(() => {
     if (customer) {
       getImage();
