@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { CustomerType } from "../types";
 
 const Customer_List = ({
@@ -6,6 +6,8 @@ const Customer_List = ({
 }: {
   setActiveCustomer: Function;
 }) => {
+
+  // Dummy customers
   const customers: CustomerType[] = useMemo(
     () => [
       {
@@ -92,13 +94,16 @@ const Customer_List = ({
     []
   );
 
-  const [activeID, setActiveID] = useState<number>(1);
+  // State to set active customerID
+  const [activeID, setActiveID] = useState<number>(1); 
 
+  // Function to handle active customer
   const handleCustomerClick = (customer: CustomerType) => {
     setActiveCustomer(customer);
     setActiveID(customer.id);
   };
 
+  // useEffect to set the first customers as initial active customer
   useEffect(() => {
     setActiveCustomer(customers[0]);
   }, [customers, setActiveCustomer]);
