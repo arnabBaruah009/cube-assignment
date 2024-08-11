@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CustomerType } from "../types";
+import { CustomerType, Response } from "../types";
 
 const Customer_Details = ({
   customer,
@@ -29,12 +29,10 @@ const ImageContainer = ({
 }: {
   customer: CustomerType | undefined;
 }) => {
-  type Response = {
-    message: string[];
-  };
-
+  // State to set response data
   const [data, setData] = useState<Response>();
 
+  // Function to fetch images from api
   const getImage = async () => {
     try {
       const response = await fetch(
@@ -70,6 +68,7 @@ const ImageContainer = ({
 };
 
 const Image = ({ src }: { src: string }) => {
+  // State to set loading state
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   return (
