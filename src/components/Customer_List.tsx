@@ -111,9 +111,9 @@ const Customer_List = ({
             <li
               key={customer.name}
               onClick={() => handleCustomerClick(customer)}
-              className={`w-full py-4 px-6 md:px-8 md:py-6 xl:px-12 border-1 ${
+              className={`relative w-full py-4 px-6 md:px-8 md:py-6 xl:px-12 border-1 ${
                 activeID === customer.id
-                  ? "bg-blue-100 md:border-r-4 md:border-r-slate-500"
+                  ? "bg-blue-100 md:before:absolute md:before:h-full md:before:w-[4px] md:before:top-0 md:before:right-0 md:before:bg-slate-500"
                   : ""
               } hover:bg-blue-100 cursor-pointer border-b-2`}
             >
